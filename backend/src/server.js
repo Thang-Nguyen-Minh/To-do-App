@@ -5,10 +5,15 @@ import dotenv from 'dotenv';
 //Tạo 1 ứng dụng Express
 const app=express();
 dotenv.config();
-connectDB();
+
 const PORT = process.env.PORT || 5001;
+app.use(express.json());//phải nằm trước api thì mới dịch sang được đcm
 app.use("/api/tasks",taskRoute);
-//Cho ứng dụng lắng nghe trên 1 cổng đơn giản là vì cổng đó đang rảnh
-app.listen(PORT,()=>{
-    console.log(`Server running on port ${PORT}`);
-})
+//Kết nối CSDL xong thì server mới chạy ở cổng 5001
+connectDB().then(()=>{
+    app.listen(PORT,()=>{
+        console.log(`Server running on port ${PORT}`);
+    })
+});
+
+
