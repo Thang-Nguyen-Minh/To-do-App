@@ -16,7 +16,7 @@ export const TaskList = () => {
             _id : '2',
             title : 'Learn NodeJS',
             status : 'completed',
-            completedAt: null,
+            completedAt: new Date(),
             createdAt : new Date(),
         }
     ];

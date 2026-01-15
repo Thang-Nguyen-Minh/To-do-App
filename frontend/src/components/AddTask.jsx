@@ -4,6 +4,7 @@ import {Card} from "@/components/ui/card.jsx";
 import {Input} from "@/components/ui/input.jsx";
 import {Button} from "@/components/ui/button.jsx";
 import {Plus} from "lucide-react";
+
 export const AddTask = () => {
     return (
         <Card className="p-6 border-0 bg-gradient-card shadow-custom-lg">
